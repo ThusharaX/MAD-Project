@@ -10,14 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject">
         <activity
-            android:name=".MainActivity"
+            android:name=".RenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
+                -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

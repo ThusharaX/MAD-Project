@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "450404753479",
+    "project_id": "mad-project-vehicle-rental-app",
+    "storage_bucket": "mad-project-vehicle-rental-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450404753479:android:333cbb85c9aceb37061162",
+        "android_client_info": {
+          "package_name": "com.binarymatter.mad_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450404753479-kpko70ueu37a2f34s027u7dpi7fj5qme.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.binarymatter.mad_project",
+            "certificate_hash": "551ad14e9ade69e41460695139eeb5523e4267a3"
+          }
+        },
+        {
+          "client_id": "450404753479-hr0mip02ks9qgapt3488fod92pgjso25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTSeLhXtTnMyC5HXmXKL-UA_Zs-ESth4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450404753479-hr0mip02ks9qgapt3488fod92pgjso25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

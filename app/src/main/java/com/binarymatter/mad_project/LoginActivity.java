@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                     fAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(LoginActivity.this, "LoggedIn Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             checkUserAccessLevel(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {

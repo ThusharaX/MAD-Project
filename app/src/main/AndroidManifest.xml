@@ -10,19 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject">
         <activity
-            android:name=".RenterActivity"
+            android:name=".activities.VehicleRequestListActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.BuyerActivity"/>
+        <activity
+            android:name=".activities.RequestVehicleActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.BuyerActivity" />
+        <activity
+            android:name=".activities.RenterActivity"
             android:exported="false" />
         <activity
-            android:name=".BuyerActivity"
+            android:name=".activities.BuyerActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name=".activities.AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 -->
@@ -32,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
     </application>
 

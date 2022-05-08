@@ -21,6 +21,14 @@
             android:exported="false"
             android:parentActivityName=".activities.BuyerActivity" />
         <activity
+            android:name=".activities.CategoryListActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.AdminActivity" />
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.AdminActivity" />
+        <activity
             android:name=".activities.RenterActivity"
             android:exported="false" />
         <activity

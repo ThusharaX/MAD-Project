@@ -10,23 +10,26 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Request Vehicle Form"
+        android:text="Request Vehicle"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <EditText
         android:id="@+id/rvTitle"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="272dp"
         android:ems="10"
         android:hint="Title"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="14dp" />
+        tools:layout_editor_absoluteX="13dp" />
 
     <EditText
         android:id="@+id/rvCategory"
@@ -67,11 +70,22 @@
         android:id="@+id/requestVehicleSubmitBtn"
         android:layout_width="382dp"
         android:layout_height="56dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="40dp"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvBudget" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="265dp"
+        android:layout_height="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118"
+        app:srcCompat="@drawable/request_vehicle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

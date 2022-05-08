@@ -2,6 +2,7 @@ package com.binarymatter.mad_project.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.binarymatter.mad_project.R;
 import com.binarymatter.mad_project.adapters.RequestVehicleAdapter;
 import com.binarymatter.mad_project.models.RequestVehicleModal;
+import com.binarymatter.mad_project.utils.TouchHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -45,10 +47,13 @@ public class VehicleRequestListActivity extends AppCompatActivity {
         adapter = new RequestVehicleAdapter(this, list);
         recyclerViewMyRequests.setAdapter(adapter);
 
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new TouchHelper(adapter));
+        touchHelper.attachToRecyclerView(recyclerViewMyRequests);
+
         showData();
     }
 
-    private void showData() {
+    public void showData() {
         FirebaseUser user = fAuth.getCurrentUser();
         db.collection("VehicleRequests").whereEqualTo("uID", user.getUid()).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

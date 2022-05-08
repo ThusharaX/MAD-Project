@@ -29,6 +29,8 @@ public class RequestVehicleActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     boolean valid = true;
 
+    private String uId, uTitle, uCategory, uRequiredDate, uBudget;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,23 @@ public class RequestVehicleActivity extends AppCompatActivity {
         requestVehicleSubmitBtn = findViewById(R.id.requestVehicleSubmitBtn);
 
         db = FirebaseFirestore.getInstance();
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            requestVehicleSubmitBtn.setText("Update");
+            uId = bundle.getString("id");
+            uTitle = bundle.getString("title");
+            uCategory = bundle.getString("category");
+            uRequiredDate = bundle.getString("requiredDate");
+            uBudget = bundle.getString("budget");
+
+            rvTitle.setText(uTitle);
+            rvCategory.setText(uCategory);
+            rvRequiredDate.setText(uRequiredDate);
+            rvBudget.setText(uBudget);
+        } else {
+            requestVehicleSubmitBtn.setText("Submit");
+        }
 
         requestVehicleSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +78,37 @@ public class RequestVehicleActivity extends AppCompatActivity {
                     String category = rvCategory.getText().toString();
                     String requiredDate = rvRequiredDate.getText().toString();
                     Double budget = Double.valueOf(rvBudget.getText().toString());
-                    String id = UUID.randomUUID().toString();
 
-                    saveToFireStore(id, title, category, requiredDate, budget, uID);
+                    Bundle bundle1 = getIntent().getExtras();
+                    if (bundle1 != null) {
+                        String id = uId;
+                        updateToFireStore(id, title, category, requiredDate, budget);
+                    } else {
+                        String id = UUID.randomUUID().toString();
+                        saveToFireStore(id, title, category, requiredDate, budget, uID);
+                    }
                 }
+            }
+        });
+    }
+
+    private void updateToFireStore(String id, String title, String category, String requiredDate, Double budget) {
+        db.collection("VehicleRequests").document(id).update("title", title, "category", category, "requiredDate", requiredDate, "budget", budget)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RequestVehicleActivity.this, "Data Updated !", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), VehicleRequestListActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(RequestVehicleActivity.this, "Error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(RequestVehicleActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

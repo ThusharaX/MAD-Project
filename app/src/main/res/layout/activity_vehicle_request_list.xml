@@ -17,11 +17,10 @@
         app:layout_constraintVertical_bias="0.964" />
 
     <TextView
-        android:id="@+id/textViewmyRequests"
+        android:id="@+id/textViewTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:text="My Requets"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewMyRequests"

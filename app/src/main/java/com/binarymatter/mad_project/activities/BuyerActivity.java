@@ -34,7 +34,12 @@ public class BuyerActivity extends AppCompatActivity {
         goToMyRequests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), VehicleRequestListActivity.class));
+                Intent intent = new Intent(BuyerActivity.this, VehicleRequestListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("USER_TYPE", "Buyer");
+                intent.putExtras(bundle);
+                startActivity(intent);
+//                startActivity(new Intent(getApplicationContext(), VehicleRequestListActivity.class));
             }
         });
     }

@@ -12,11 +12,11 @@ import com.binarymatter.mad_project.adapters.RequestVehicleAdapter;
 
 import com.binarymatter.mad_project.R;
 
-public class TouchHelper extends ItemTouchHelper.SimpleCallback {
+public class VehicleRequestTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     private RequestVehicleAdapter adapter;
 
-    public TouchHelper(RequestVehicleAdapter adapter) {
+    public VehicleRequestTouchHelper(RequestVehicleAdapter adapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }

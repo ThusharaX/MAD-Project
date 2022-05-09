@@ -47,7 +47,7 @@ public class BuyerActivity extends AppCompatActivity {
         goToPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+                startActivity(new Intent(getApplicationContext(), ShowAllPaymentActivity.class));
             }
         });
 

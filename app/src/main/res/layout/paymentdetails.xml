@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_margin="13sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card Holder Name"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/cardholder"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card Number"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/cardnumber"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expire Date"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/expiredate"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CVV Number"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/cvv"/>
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

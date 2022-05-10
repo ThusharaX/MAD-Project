@@ -23,12 +23,19 @@ import java.util.UUID;
 
 public class CategoryActivity extends AppCompatActivity {
 
+    // Variable for Form Elements
     private EditText catName, catDescription;
     private Button categorySubmitBtn;
+
+    // Database Variable
     private FirebaseFirestore db;
+
+    // Authentication
     FirebaseAuth fAuth;
+
     boolean valid = true;
 
+    // Update data variables
     private String uId, uCatName, uCatDescription;
 
     @Override
@@ -38,14 +45,19 @@ public class CategoryActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
+        // Get ID's for Variables
         catName = findViewById(R.id.catName);
         catDescription = findViewById(R.id.catDescription);
         categorySubmitBtn = findViewById(R.id.categorySubmitBtn);
 
         db = FirebaseFirestore.getInstance();
 
+        // Get data from update swipe
         Bundle bundle = getIntent().getExtras();
+
+        // Check if data not null
         if (bundle != null) {
+            // Update
             categorySubmitBtn.setText("Update");
             uId = bundle.getString("id");
             uCatName = bundle.getString("name");
@@ -54,27 +66,29 @@ public class CategoryActivity extends AppCompatActivity {
             catName.setText(uCatName);
             catDescription.setText(uCatDescription);
         } else {
+            // Create
             categorySubmitBtn.setText("Submit");
         }
 
         categorySubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Validate if input fields are empty or not
                 checkField(catName);
                 checkField(catDescription);
 
                 if (valid) {
-                    FirebaseUser user = fAuth.getCurrentUser();
-//                    String uID = user.getUid();
                     String name = catName.getText().toString();
                     String description = catDescription.getText().toString();
 
                     Bundle bundle1 = getIntent().getExtras();
                     if (bundle1 != null) {
+                        // Update
                         String id = uId;
                         updateToFireStore(id, name, description);
                     } else {
-                        String id = UUID.randomUUID().toString();
+                        // Create
+                        String id = UUID.randomUUID().toString(); // Generate unique ID
                         saveToFireStore(id, name, description);
                     }
                 }
@@ -82,6 +96,8 @@ public class CategoryActivity extends AppCompatActivity {
         });
     }
 
+
+    // Update Method
     private void updateToFireStore(String id, String name, String description) {
         db.collection("Categories").document(id).update("name", name, "description", description)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -103,12 +119,15 @@ public class CategoryActivity extends AppCompatActivity {
         });
     }
 
+
+    // Create Method
     private void saveToFireStore(String id, String catName, String catDescription) {
         HashMap<String, Object> data = new HashMap<>();
         data.put("id", id);
         data.put("name", catName);
         data.put("description", catDescription);
 
+        // Data added to Categories
         db.collection("Categories").document(id).set(data)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -127,6 +146,7 @@ public class CategoryActivity extends AppCompatActivity {
         });
     }
 
+    // Validation
     public boolean checkField(EditText textField){
         if(textField.getText().toString().isEmpty()){
             textField.setError("Error");

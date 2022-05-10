@@ -14,7 +14,7 @@ import com.binarymatter.mad_project.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class BuyerActivity extends AppCompatActivity {
-    Button goToRequestVehicle, goToMyRequests, goToPayment;
+    Button goToRequestVehicle, goToMyRequests, goToPayment, goToFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,14 @@ public class BuyerActivity extends AppCompatActivity {
         goToRequestVehicle = findViewById(R.id.requestVehicle);
         goToMyRequests = findViewById(R.id.myRequests);
         goToPayment = findViewById(R.id.myPayment);
+        goToFeedback = findViewById(R.id.feedbackBtn);
+
+        goToFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FeedbackActivity.class));
+            }
+        });
 
         goToRequestVehicle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +55,7 @@ public class BuyerActivity extends AppCompatActivity {
         goToPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+                startActivity(new Intent(getApplicationContext(), ShowAllPaymentActivity.class));
             }
         });
 

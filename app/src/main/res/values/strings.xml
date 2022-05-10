@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Rent n’ Go</string>
+    <string name="rvCardHolderName">Card Holder Name</string>
+    <string name="rvCardNumber">Card Number</string>
+    <string name="rvExpireDate">Expire Date</string>
+    <string name="rvCvv">CVV Number</string>
+    <string name="PaySubmitBtn">Pay</string>
 </resources>

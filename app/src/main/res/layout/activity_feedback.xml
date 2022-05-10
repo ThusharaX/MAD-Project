@@ -8,7 +8,7 @@
     tools:context=".activities.FeedbackActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -22,18 +22,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/feedbackImage"
         android:layout_width="398dp"
         android:layout_height="223dp"
         android:layout_marginTop="32dp"
         android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFeedback"
         app:srcCompat="@drawable/feedback1" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewAddRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -44,10 +44,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/feedbackImage" />
 
     <RatingBar
-        android:id="@+id/ratingBar8"
+        android:id="@+id/feedbackRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -57,11 +57,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddRating"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/editTextFeedback"
         android:layout_width="364dp"
         android:layout_height="119dp"
         android:background="@color/white"
@@ -70,15 +70,15 @@
         android:hint="Enter your Feedback Here"
         android:inputType="textMultiLine"
         android:textColorHint="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/feedbackSubmitBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar8"
+        app:layout_constraintTop_toBottomOf="@+id/feedbackRatingBar"
         app:layout_constraintVertical_bias="0.55" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/feedbackSubmitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"

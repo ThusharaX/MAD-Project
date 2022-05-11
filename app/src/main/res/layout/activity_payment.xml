@@ -11,6 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Payment"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +24,15 @@
         android:id="@+id/rvCardHolderName"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="168dp"
         android:ems="10"
         android:hint="Card Holder Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="14dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/rvCardNumber"
@@ -37,6 +42,7 @@
         android:ems="10"
         android:hint="Card Number"
         android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/rvCardHolderName"
         tools:layout_editor_absoluteX="14dp" />
 
@@ -48,6 +54,7 @@
         android:ems="10"
         android:hint="Expire Date"
         android:inputType="date"
+        android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/rvCardNumber"
         tools:layout_editor_absoluteX="14dp" />
 
@@ -59,6 +66,7 @@
         android:ems="10"
         android:hint="CVV Number"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,11 +76,23 @@
         android:id="@+id/PaySubmitBtn"
         android:layout_width="382dp"
         android:layout_height="56dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="68dp"
         android:text="Pay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvCvv" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="230dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/payment_img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
